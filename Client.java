@@ -6,6 +6,10 @@ import java.io.*;
 public class Client
 {
     public static void main(String[] args) {
+        
+        //Try block to connect client socket to localhost and the servers port, this allows it to connect.
+        //printwriter takes the output and inputstreamreader takes byte values and bridges them to string
+        //for the bufferedreader to read
         try (
             Socket client = new Socket("localhost", 8080);
 
@@ -17,6 +21,7 @@ public class Client
 
             BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in))
             )
+            //takes input from user ASWELL as outputting the echo from the server if there is one.
         {
             String input;
 
@@ -26,6 +31,7 @@ public class Client
                 System.out.println("echo: " + in.readLine());
             }
         }
+        //Exception incase the socket connection fails.
         catch (IOException e)
         {
             System.err.println("Socket connection failed");
