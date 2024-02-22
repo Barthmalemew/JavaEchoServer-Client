@@ -1,4 +1,4 @@
- JavaEchoServer-Client
+# JavaEchoServer-Client
 A socket echo server written in java that reads an input from the user at the byte level,
 and then sends it back to be displayed by the client.
 
